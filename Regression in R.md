@@ -1260,17 +1260,21 @@ plot(prediction,actual)
 
 
 <font size="4" face="Lato" color="#000000"><pre class="tab">
-You can see from this chart of the prediction data (the 30 % of the data that was left out) vs the actual data that the model performs well when predicting housing prices it hasn't seen before. the model underpredicts the price on the more extreme values but I think this is a pretty good fit for a model that explains 85% of the variance in housing price.
+You can see from this chart of the prediction data (the 30 % of the data that was left out) vs 
+the actual data that the model performs well when predicting housing prices it hasn't seen before. 
+The model underpredicts the price on the more extreme values but I think this is a pretty good fit 
+for a model that explains 85% of the variance in housing price.
 </pre></font>
 
 <font size="5" face="Lato" color="#000000"><pre class="tab">Final analysis</pre></font>
 
-
 <font size="4" face="Lato" color="#000000"><pre class="tab">
-In the end we can say that the following predictors are significant at the .05 level for predicting the final sales price for homes in King County, Washington:
+In the end we can say that the following predictors are significant at the .05 level for predicting the 
+final sales price for homes in King County, Washington:
 &nbsp;
 sqrt_living, sqrt_lot, number of floors, whether or not the property is on a waterfront,
 the quality of the view, condition of the property, sqrt_basement, and the zip code. 
 &nbsp;
-These predictors explain 85% of the variability in the final sales price of homes and we can reject the null hypotheses that none of these predictors contribute significantly to the final sales price. 
+These predictors explain 85% of the variability in the final sales price of homes and we can reject 
+the null hypotheses that none of these predictors contribute significantly to the final sales price. 
 </pre></font>
