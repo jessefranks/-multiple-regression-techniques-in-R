@@ -1185,7 +1185,7 @@ Next, I will verify the 4 assumptions of residuals which are:
 
 <font size="4" face="Lato" color="#000000"><pre class="tab">
 
-<b>Linearity:</b> The relationship between X and the mean of Y is linear.
+<b>Linearity:</b> The relationship between X and the Y is linear.
 
 <b>Homoscedasticity:</b> The variance of residual is the same for any value of X.
 
