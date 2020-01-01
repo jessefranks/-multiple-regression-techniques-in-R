@@ -130,7 +130,8 @@ corrplot(cor(df.numeric), method = "shade") # Make a corraltion plot.
 
 
 <font size="4" face="Georgia" color="#000000">
-From this correlation plot I can see that the 'sqft_above' column has perfect multicollinearity with 'sqrt living'. This is bad because it can cause wrong Beta coefficient values or change the sign of our beta coefficients.</font> 
+From this correlation plot I can see that the 'sqft_above' column has perfect multicollinearity with 'sqrt living'. 
+This is bad because it can cause wrong Beta coefficient values or change the sign of our beta coefficients.</font> 
 
 
 ```R
@@ -142,7 +143,8 @@ In this step I will check for multicollinearity among my predictors using VIF sc
 
 Where R^2(xi) is equal to the R^2 value when xi is predicted using all the other predictors. 
 
-A VIF value is considered bad if it is 10 or above. There shouldn't be any high VIF values because I removed the most obvious one above via the correlation plot above, but VIF is another check on that.
+A VIF value is considered bad if it is 10 or above. There shouldn't be any high VIF values because 
+I removed the most obvious one above via the correlation plot above, but VIF is another check on that.
 </font>
 
 
@@ -253,7 +255,8 @@ train <- df[partition==1 ,]
 test <- df[partition==2 ,]
 ```
 
-<font size="4" face="Georgia" color="#000000">My first attempt at a regression model will have all predictors, no interaction terms and no higer order terms. </font>
+<font size="4" face="Georgia" color="#000000">My first attempt at a regression model will have all predictors, 
+	no interaction terms and no higer order terms. </font>
 
 
 ```R
@@ -988,7 +991,8 @@ As you can see the results are the same, but I think I can do just as well by re
 </pre></font> 
 
 
-<font size="4" face="Georgia" color="#000000">Here, I will drop the 'grade', 'year_renovated', and 'year_built' columns because they don’t seem to contribute much to the model. </font> 
+<font size="4" face="Georgia" color="#000000">Here, I will drop the 'grade', 'year_renovated', and 
+	'year_built' columns because they don’t seem to contribute much to the model. </font> 
 
 
 ```R
@@ -1031,7 +1035,8 @@ summary(df) # Summary of the new dataframe.
                                     
 
 
-<font size="4" face="Georgia" color="#000000"> After, dropping those columns I need to resample the data and re-run the regression model. </font> 
+<font size="4" face="Georgia" color="#000000"> After, dropping those columns 
+	I need to resample the data and re-run the regression model. </font> 
 
 
 ```R
@@ -1175,7 +1180,8 @@ summary(lm.train)
   <li>Multiple R-squared:  0.8574,	Adjusted R-squared:  0.8566</li>
   <li>F-statistic: 977.1 on 93 and 15109 DF, p-value: &lt 2.2e-16</li>
 </ul>
-After rerunning the model with those columns dropped, we get a much simpler model and lose a negligible amount of explanatory power in the adj R^2 statistic 88 % to 85 %. 
+After rerunning the model with those columns dropped, we get a much simpler model and 
+lose a negligible amount of explanatory power in the adj R^2 statistic 88 % to 85 %. 
 </pre></font> 
 
 
@@ -1194,8 +1200,6 @@ Next, I will verify the 4 assumptions of residuals which are:
 <b>Normality:</b> For any fixed value of X, Y is normally distributed.
 </pre></font> 
 
-
-
 ```R
 plot(train$price, lm.train$residuals)
 ```
@@ -1208,8 +1212,6 @@ plot(train$price, lm.train$residuals)
 This first plot is a graph of the dependent variable on the X-axis and the residuals of the dependent variable on the Y-axis. 
 Its purpose is to verify that a linear relationship exists and it does. 
 </pre></font> 
-
-
 
 ```R
 plot(lm.train)
@@ -1235,19 +1237,20 @@ plot(lm.train)
 
 The four plots above each tell us something different.
 
-<b>Residuals vs Fitted:</b> This allows us to verify if the model is homoscedastic i.e. the errors have equal variance and they do.
+<b>Residuals vs Fitted:</b> This allows us to verify if the model is homoscedastic i.e. 
+the errors have equal variance and they do.
 
 <b>Normal Q-Q:</b> This tells me the dependent variable has an underlying normal distribution.
 
 <b>Scale-Location:</b> This plot also measures homoscedasticity most of the variance is equal on both sides of the line. 
 
-<b>Residuals vs Leverage:</b> This plot shows us if any data points in our model have an outsized leverage on our regression model. Anything in the corners beyond the dashed line is a potential outlier. We have none so we can move on.
+<b>Residuals vs Leverage:</b> This plot shows us if any data points in our 
+model have an outsized leverage on our regression model. Anything in the corners beyond the dashed line 
+is a potential outlier. We have none so we can move on.
 </pre></font>
 
 <font size="4" face="Lato" color="#000000"><pre class="tab">
-
 </pre></font>
-
 
 ```R
 prediction <- predict(lm.train, test)
@@ -1266,9 +1269,9 @@ The model underpredicts the price on the more extreme values but I think this is
 for a model that explains 85% of the variance in housing price.
 </pre></font>
 
-<font size="5" face="Lato" color="#000000"><pre class="tab">Final analysis</pre></font>
-
 <font size="4" face="Lato" color="#000000"><pre class="tab">
+Final analysis
+
 In the end we can say that the following predictors are significant at the .05 level for predicting the 
 final sales price for homes in King County, Washington:
 &nbsp;
