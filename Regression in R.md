@@ -134,7 +134,7 @@ From this correlation plot I can see that the 'sqft_above' column has perfect mu
 
 
 ```R
-df <- df[,-c(12)] # drop the 'sqft_above' col because it has a correlation value of 1 wiht 'sqrt_living'.
+df <- df[,-c(12)] # drop the 'sqft_above' col because it has a correlation value of 1 with 'sqrt_living'.
 ```
 
 <font size="4" face="Georgia" color="#000000">
